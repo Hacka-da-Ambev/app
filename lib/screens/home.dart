@@ -13,7 +13,10 @@ class Home extends StatelessWidget {
         children: [
           SvgPicture.asset('assets/img/ambev.svg',
               color: Colors.red[900], width: 88, height: 22),
-          Text("Olá, Daniel", style: GoogleFonts.lato(fontSize: 36))
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0),
+            child: Text("Olá, Daniel", style: GoogleFonts.comfortaa(fontSize: 36)),
+          )
         ],
       ),
       pageContent: _buildContent(context),
@@ -26,7 +29,7 @@ class Home extends StatelessWidget {
       children: [
         Text(
           "O que está procurando hoje?",
-          style: GoogleFonts.lato(fontSize: 36)
+          style: GoogleFonts.comfortaa(fontSize: 36)
         ),
         Container(
           width: MediaQuery.of(context).size.width,
@@ -44,7 +47,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Harmonização", style: GoogleFonts.lato(fontSize: 16))
+                    child: Text("Harmonização", style: GoogleFonts.comfortaa(fontSize: 16))
                   )
                 ),
                 color: Colors.grey[200],
@@ -53,7 +56,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Soberans", style: GoogleFonts.lato(fontSize: 16))
+                    child: Text("Soberano", style: GoogleFonts.comfortaa(fontSize: 16))
                   )
                 ),
                 color: Colors.grey[200],
@@ -62,7 +65,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Locais de Venda", style: GoogleFonts.lato(fontSize: 16))
+                    child: Text("Locais de Venda", style: GoogleFonts.comfortaa(fontSize: 16))
                   )
                 ),
                 color: Colors.grey[200],
@@ -71,7 +74,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Catálogo", style: GoogleFonts.lato(fontSize: 16))
+                    child: Text("Catálogo", style: GoogleFonts.comfortaa(fontSize: 16))
                   )
                 ),
                 color: Colors.grey[200],
@@ -82,7 +85,7 @@ class Home extends StatelessWidget {
         Container(
           alignment: Alignment.centerRight,
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pushNamed(context, '/nini'),
             child: Icon(Icons.chat, color: primaryColor),
             backgroundColor: Colors.white,
           )

@@ -1,4 +1,6 @@
 import 'package:app/screens/home.dart';
+import 'package:app/screens/nini.dart';
+import 'package:app/screens/suggestions.dart';
 import 'package:app/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: primaryColor,
       ),
-      home: Home(),
+      routes: {
+        '/': (context) => Home(),
+        '/nini': (context) => Nini(),
+        '/suggestions': (context) => Suggestions(),
+      },
     );
   }
 }

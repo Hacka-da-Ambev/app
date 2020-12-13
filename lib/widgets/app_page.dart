@@ -123,8 +123,8 @@ class _AppPageState extends State<AppPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: Text("Daniel Rossini",
-                    style: GoogleFonts.lato(
-                        fontSize: 22, fontWeight: FontWeight.w700)),
+                    style: GoogleFonts.comfortaa(
+                        fontSize: 22, fontWeight: FontWeight.w900)),
               ),
             ],
           ),
@@ -149,7 +149,7 @@ class _AppPageState extends State<AppPage> {
                       dense: true,
                       leading: Icon(Icons.ac_unit),
                       title: Text("Teste",
-                          style: GoogleFonts.lato(
+                          style: GoogleFonts.comfortaa(
                               fontSize: 16, fontWeight: FontWeight.w700)),
                     );
                   }),
@@ -165,6 +165,7 @@ class _AppPageState extends State<AppPage> {
                       width: MediaQuery.of(context).size.width,
                       child: Text(
                         "SAIR DO APP",
+                        style: GoogleFonts.comfortaa(fontSize: 16),
                         textAlign: TextAlign.center,
                       ))))
         ],
@@ -192,10 +193,8 @@ class _AppPageState extends State<AppPage> {
 
   double _getHeaderSize() {
     if (!_hasHeader && !_isShowingMenu) {
-      print("no header");
       return 0;
     }
-      print("show header");
     double heightPercentual = _isShowingMenu
         ? _headerHeightOpenedPercentual
         : _headerHeightClosedPercentual;
