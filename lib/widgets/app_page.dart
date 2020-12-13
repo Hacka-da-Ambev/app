@@ -80,7 +80,7 @@ class _AppPageState extends State<AppPage> {
             ),
             color: primaryColor,
             width: MediaQuery.of(context).size.width,
-            height: _headerHeight,
+            height: _getHeaderSize(),
           )),
     ));
   }
@@ -98,7 +98,7 @@ class _AppPageState extends State<AppPage> {
         ));
   }
 
-  bool _toogleMenu() {
+  void _toogleMenu() {
     _isShowingMenu = !_isShowingMenu;
     if (_isShowingMenu) {
       _headerContent = Expanded(
@@ -132,51 +132,41 @@ class _AppPageState extends State<AppPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Container(
-              height:  MediaQuery.of(context).size.height * 0.36,
+              height: MediaQuery.of(context).size.height * 0.36,
               decoration: BoxDecoration(
-                border: Border.symmetric(
-                  horizontal: BorderSide(
-                    color: Colors.black,
-                    width: 1.5
-                  )
-                )
-              ),
+                  border: Border.symmetric(
+                      horizontal: BorderSide(color: Colors.black, width: 1.5))),
               child: ListView.separated(
-                padding: EdgeInsets.all(0),
-                separatorBuilder: (context, index) => Divider(
-                  height: 0,
-                  thickness: 1.5,
-                  color: Colors.black,
-                ),
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    dense: true,                 
-                    leading: Icon(Icons.ac_unit),
-                    title: Text("Teste", style: GoogleFonts.lato(
-                          fontSize: 16, fontWeight: FontWeight.w700)),
-                  );
-                }
-              ),
+                  padding: EdgeInsets.all(0),
+                  separatorBuilder: (context, index) => Divider(
+                        height: 0,
+                        thickness: 1.5,
+                        color: Colors.black,
+                      ),
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      dense: true,
+                      leading: Icon(Icons.ac_unit),
+                      title: Text("Teste",
+                          style: GoogleFonts.lato(
+                              fontSize: 16, fontWeight: FontWeight.w700)),
+                    );
+                  }),
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.08
-          ),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.08),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: OutlineButton(
-              borderSide: BorderSide(
-                color: Colors.black,
-                width: 1.5
-              ),
-              onPressed: () {},
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                child: Text("SAIR DO APP", textAlign: TextAlign.center,)
-              )
-            )
-          )
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: OutlineButton(
+                  borderSide: BorderSide(color: Colors.black, width: 1.5),
+                  onPressed: () {},
+                  child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Text(
+                        "SAIR DO APP",
+                        textAlign: TextAlign.center,
+                      ))))
         ],
       ),
     );
@@ -192,15 +182,20 @@ class _AppPageState extends State<AppPage> {
   void _prepareLayout() {
     setState(() {
       _hasHeader = widget.headerContent != null;
-      if (_hasHeader) {
-        _headerHeight = _getHeaderSize();
-        _contentTopPosition =
-            MediaQuery.of(context).size.height * _headerHeightClosedPercentual;
-      }
+      // if (_hasHeader) {
+      //   _headerHeight = _getHeaderSize();
+      //   _contentTopPosition =
+      //       MediaQuery.of(context).size.height * _headerHeightClosedPercentual;
+      // }
     });
   }
 
   double _getHeaderSize() {
+    if (!_hasHeader && !_isShowingMenu) {
+      print("no header");
+      return 0;
+    }
+      print("show header");
     double heightPercentual = _isShowingMenu
         ? _headerHeightOpenedPercentual
         : _headerHeightClosedPercentual;

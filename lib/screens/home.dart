@@ -1,7 +1,7 @@
 import 'package:app/utils/constants.dart';
 import 'package:app/widgets/app_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatelessWidget {
