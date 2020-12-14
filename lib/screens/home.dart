@@ -1,4 +1,3 @@
-import 'package:app/utils/constants.dart';
 import 'package:app/widgets/app_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,11 +10,10 @@ class Home extends StatelessWidget {
       headerContent: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SvgPicture.asset('assets/img/ambev.svg',
-              color: Colors.red[900], width: 88, height: 22),
+          SvgPicture.asset('assets/img/ambev.svg', width: 110),
           Padding(
             padding: const EdgeInsets.only(top: 10.0),
-            child: Text("Olá, Daniel", style: GoogleFonts.comfortaa(fontSize: 36)),
+            child: Text("Olá, Daniel", style: GoogleFonts.comfortaa(fontSize: 26, color: Colors.grey[400])),
           )
         ],
       ),
@@ -29,7 +27,7 @@ class Home extends StatelessWidget {
       children: [
         Text(
           "O que está procurando hoje?",
-          style: GoogleFonts.comfortaa(fontSize: 36)
+          style: GoogleFonts.comfortaa(fontSize: 36,)
         ),
         Container(
           width: MediaQuery.of(context).size.width,
@@ -47,7 +45,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Harmonização", style: GoogleFonts.comfortaa(fontSize: 16))
+                    child: Text("Bora dar match", style: GoogleFonts.comfortaa(fontSize: 16, fontWeight:FontWeight.w700), textAlign: TextAlign.center,)
                   )
                 ),
                 color: Colors.grey[200],
@@ -56,7 +54,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Soberano", style: GoogleFonts.comfortaa(fontSize: 16))
+                    child: Text("Só as TOP", style: GoogleFonts.comfortaa(fontSize: 16, fontWeight:FontWeight.w700), textAlign: TextAlign.center,)
                   )
                 ),
                 color: Colors.grey[200],
@@ -65,7 +63,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Locais de Venda", style: GoogleFonts.comfortaa(fontSize: 16))
+                    child: Text("Onde comprar", style: GoogleFonts.comfortaa(fontSize: 16, fontWeight:FontWeight.w700), textAlign: TextAlign.center,)
                   )
                 ),
                 color: Colors.grey[200],
@@ -74,7 +72,7 @@ class Home extends StatelessWidget {
                 child: Container(
                   height: 25,
                   child: Center(
-                    child: Text("Catálogo", style: GoogleFonts.comfortaa(fontSize: 16))
+                    child: Text("Os produtin da Ambev", style: GoogleFonts.comfortaa(fontSize: 16, fontWeight:FontWeight.w700), textAlign: TextAlign.center,)
                   )
                 ),
                 color: Colors.grey[200],
@@ -84,10 +82,11 @@ class Home extends StatelessWidget {
         ),
         Container(
           alignment: Alignment.centerRight,
-          child: FloatingActionButton(
+          child: FlatButton(
+            height: 60,
+            minWidth: 40,
             onPressed: () => Navigator.pushNamed(context, '/nini'),
-            child: Icon(Icons.chat, color: primaryColor),
-            backgroundColor: Colors.white,
+            child: SvgPicture.asset('assets/img/nini/peace.svg', height: 100),
           )
         ),
       ],

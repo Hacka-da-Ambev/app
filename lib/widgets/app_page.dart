@@ -183,11 +183,10 @@ class _AppPageState extends State<AppPage> {
   void _prepareLayout() {
     setState(() {
       _hasHeader = widget.headerContent != null;
-      // if (_hasHeader) {
-      //   _headerHeight = _getHeaderSize();
-      //   _contentTopPosition =
-      //       MediaQuery.of(context).size.height * _headerHeightClosedPercentual;
-      // }
+      if (_hasHeader) {
+        _contentTopPosition =
+            MediaQuery.of(context).size.height * _headerHeightClosedPercentual;
+      }
     });
   }
 

@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.1
   google_fonts: ^1.1.1
   flutter_svg: ^0.19.1
+  flutter_swiper: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -50,8 +51,23 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    # Logo
     - assets/img/ambev.svg
-    - assets/img/nini 1.svg
+    # Nini
+    - assets/img/nini/peace.svg
+    - assets/img/nini/punch.svg
+    - assets/img/nini/tongue_winking.svg
+    # Emojis
+    - assets/img/angry.svg
+    - assets/img/excited.svg
+    - assets/img/happy.svg
+    - assets/img/love.svg
+    - assets/img/sad.svg
+    - assets/img/tired.svg
+    # Others
+    - assets/img/curves.svg
+    - assets/img/hops.svg
+    - assets/img/discount.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
